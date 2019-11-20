@@ -1,3 +1,3 @@
 echo 'Iniciando MiCalidad.bat'
-mvn pwd:pwd checkstyle:checkstyle
+mvn pmd:pmd checkstyle:checkstyle
 echo 'Finalizando MiCalidad.bat'
