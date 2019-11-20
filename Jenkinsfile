@@ -16,14 +16,8 @@ pipeline {
               	}
 	      	post { 
         		always { 
-				stage('Siempre') {
-					steps {
-						echo 'Me ejecuto siempre'
-						echo 'Job 3 paralelo: Muestra por consola el JOB_NAME que tiene y la build'	
-					}	
-				}
-            			//echo 'Me ejecuto siempre'
-				//echo 'Job 3 paralelo: Muestra por consola el JOB_NAME que tiene y la build'
+				echo 'Me ejecuto siempre'
+				echo 'Job 3 paralelo: Muestra por consola el JOB_NAME que tiene y la build'
         		}
 			unstable { 
             			echo 'Me ejecuto sólo si es unstable el paso anterior de calidad'
