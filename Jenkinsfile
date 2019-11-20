@@ -5,14 +5,15 @@ pipeline {
 	    	steps {
                 	echo 'Job 1 serie'
 			echo 'Iniciando clean y package'
-			echo 'Finalizados clean y package'
 			bat 'MiMaven.bat'
+			echo 'Finalizados clean y package'
               	}
             }
 	    stage('Calidad') {
 	      	steps {
                 	echo 'Job 2 serie'
 			echo 'Iniciando análisis de calidad de código'
+			bat 'MiCalidad.bat'
 			echo 'Finalizado el análisis de calidad de código'
               	}
 	      	post { 
