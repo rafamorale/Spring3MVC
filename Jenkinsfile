@@ -1,3 +1,11 @@
+def despliegueADes() { 
+   echo 'Despliego a desarrollo'
+}
+
+def despliegueAPro() { 
+   echo 'Despliego a produccion'
+}
+
 pipeline {
     agent any
     tools {
@@ -23,17 +31,20 @@ pipeline {
 	      	post { 
         		always { 
 				echo 'Me ejecuto siempre'
-				echo 'Job 3 paralelo: Muestra por consola el JOB_NAME que tiene y la build'
-				echo "${JOB_NAME} ${BUILD_ID}"
+				echo 'Job 3 paralelo: Muestra por consola el JOB_NAME que tiene y la BUILD'
+				echo "El job name es: ${JOB_NAME} Y el numero de build es ${BUILD_ID}"
         		}
 			unstable { 
             			echo 'Me ejecuto sólo si es unstable el paso anterior de calidad'
 				echo 'Job 4 paralelo: Hace deploy en tomcat de development'
+				despliegueADes()
         		}
 			success { 
             			echo 'Me ejecuto sólo si hay éxito en el paso anterior de calidad'
 				echo 'Job 4 paralelo: Hace deploy en tomcat de development'
+				despliegueADes()
 				echo 'Job 5 paralelo: Hace deploy en tomcat de producción'
+				despliegueAPro()
         		}
     		}
             }
