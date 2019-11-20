@@ -1,4 +1,4 @@
-def despliegueADes() { 
+def despliegueADes() {  
    echo 'Despliego a desarrollo'
    deploy adapters: [tomcat8(credentialsId: '9069e109-cd12-4eae-a36c-50b270f4eeb5', path: '', url: 'http://localhost:8081')], contextPath: null, war: '**/*.war'
 }
