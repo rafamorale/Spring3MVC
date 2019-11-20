@@ -6,6 +6,7 @@ pipeline {
                 	echo 'Job 1 serie'
 			echo 'Iniciando clean y package'
 			echo 'Finalizados clean y package'
+			bat 'MiMaven.bat'
               	}
             }
 	    stage('Calidad') {
