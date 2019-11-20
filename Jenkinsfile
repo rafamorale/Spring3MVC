@@ -29,7 +29,8 @@ pipeline {
 			echo 'Iniciando análisis de calidad de código'
 			bat 'MiCalidad.bat'
 			//checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-			checkstyle canComputeNew: false, defaultEncoding: '', failedTotalAll: '10', healthy: '', pattern: '', unHealthy: ''
+			//checkstyle canComputeNew: false, defaultEncoding: '', failedTotalAll: '10', healthy: '', pattern: '', unHealthy: ''
+			checkstyle canComputeNew: false, defaultEncoding: '', failedTotalAll: '50', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '10'
 			pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
 			echo 'Finalizado el análisis de calidad de código'
               	}
