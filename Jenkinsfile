@@ -28,7 +28,8 @@ pipeline {
                 	echo 'Job 2 serie'
 			echo 'Iniciando análisis de calidad de código'
 			bat 'MiCalidad.bat'
-			checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+			//checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+			checkstyle canComputeNew: false, defaultEncoding: '', failedTotalAll: '10', healthy: '', pattern: '', unHealthy: ''
 			pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
 			echo 'Finalizado el análisis de calidad de código'
               	}
