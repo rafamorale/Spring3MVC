@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'LocalMaven'
+	jdk 'LocalJDK8'
     }
     stages {	
 	    stage('CleanPackage') {
